@@ -1,1 +1,1 @@
-web: gunicorn task.wsgi --log-file -
+web: cd task && gunicorn task.asgi:application --log-level info
