@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'chat',
-
-    
 ]
 
 MIDDLEWARE = [
@@ -72,12 +70,6 @@ TEMPLATES = [
         },
     },
 ]
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "chat.routing.channel_routing",
-    },
-}
 
 WSGI_APPLICATION = 'task.wsgi.application'
 
@@ -125,8 +117,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
-
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
