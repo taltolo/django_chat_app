@@ -13,7 +13,7 @@ class Message(models.Model):
     message=models.TextField(unique=False,blank=False)
     subject=models.CharField(max_length=50)
     creationdate=models.DateTimeField(auto_now_add=True)
-    unread=models.BooleanField(default=True)
+    read=models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.id)

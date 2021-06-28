@@ -6,12 +6,12 @@ from django.contrib import admin
 
 
 router = routers.DefaultRouter()
-router.register(r'user', views.userViewSet)
-router.register(r'message', views.MessageViewSet)
+router.register('user', views.userViewSet)
+router.register('message', views.MessageViewSet)
 
 
 urlpatterns = [
     path('', include(router.urls)),
-    path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth/', views.CustomAuthToken.as_view()),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api-token-auth/', views.login.as_view()),
 ]
