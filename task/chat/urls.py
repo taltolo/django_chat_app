@@ -13,5 +13,5 @@ router.register('message', views.MessageViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth/', views.login.as_view()),
+    path('login/', views.login.as_view()),
 ]
