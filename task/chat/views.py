@@ -48,9 +48,9 @@ class MessageViewSet(viewsets.ModelViewSet):
         serializer = MessageSerializer(messagesDisplay, many=True)
         return Response(serializer.data)
     
-class login(ObtainAuthToken):
+class LoginAuthToken(ObtainAuthToken):
     permission_classes = [permissions.AllowAny, ]
-    def post(self, request, *args, **kwargs):
+    def login(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data,context={'request': request})
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
