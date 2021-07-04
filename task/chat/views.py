@@ -18,6 +18,10 @@ class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
+    def perform_create(self, serializer):
+        return serializer.save(sender=self.request.user)
+
+
     @action(methods=['post', ], detail=True)
     def read_message(self,request, pk):
         try:
